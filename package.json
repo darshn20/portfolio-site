@@ -1,0 +1,41 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "scripts": {
+    "start": "ng serve",
+    "build-dev": "ng build",
+    "build:ssr": "ng build",
+    "serve:ssr": "node dist/portfolio/server/server.mjs",
+    "ssr:serve": "nodemon --watch src/ -e ts,html,scss,css --exec npm run build:ssr && npm run serve:ssr",
+    "vercel-build": "npm run build:ssr"
+  },
+  "dependencies": {
+    "@angular/animations": "^17.0.0",
+    "@angular/common": "^17.0.0",
+    "@angular/compiler": "^17.0.0",
+    "@angular/core": "^17.0.0",
+    "@angular/forms": "^17.0.0",
+    "@angular/platform-browser": "^17.0.0",
+    "@angular/platform-browser-dynamic": "^17.0.0",
+    "@angular/platform-server": "^17.0.0",
+    "@angular/router": "^17.0.0",
+    "@angular/ssr": "^17.3.11",
+    "aos": "^2.3.4",
+    "express": "^4.18.2",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^17.0.0",
+    "@angular/cli": "^17.0.0",
+    "@angular/compiler-cli": "^17.0.0",
+    "@types/aos": "^3.0.7",
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.18.0",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "~5.2.2"
+  }
+}

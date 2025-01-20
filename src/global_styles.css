@@ -1,0 +1,68 @@
+@import 'aos/dist/aos.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0a192f;
+  --light-navy: #112240;
+  --lightest-navy: #233554;
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --lightest-slate: #ccd6f6;
+  --white: #e6f1ff;
+  --green: #64ffda;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: grey black;
+  scroll-behavior: smooth;
+  background-color: var(--navy);
+  color: var(--slate);
+}
+
+body {
+  @apply antialiased;
+  counter-reset: section;
+}
+
+@layer utilities {
+  .text-slate {
+    color: var(--slate);
+  }
+
+  .nav-link {
+    @apply relative text-sm font-medium text-slate hover:text-green-400 transition-all duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 -bottom-1 w-0 h-[2px] bg-green-400 transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 py-16 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-lightest-slate mb-8 flex items-center text-green-400;
+  }
+
+  .section-title::before {
+    counter-increment: section 1;
+    content: "0" counter(section) ".";
+    @apply text-green-400 mr-2 text-xl;
+  }
+
+  .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    letter-spacing: 0.1em;
+    font-family: monospace;
+  }
+}

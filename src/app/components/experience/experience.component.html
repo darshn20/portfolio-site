@@ -1,0 +1,53 @@
+<section id="experience" class="section-container">
+  <h2 class="section-title" data-aos="fade-up">Experience</h2>
+
+  <div class="grid md:grid-cols-2 gap-8">
+    <div data-aos="fade-up" data-aos-duration="800">
+      <h3 class="text-2xl font-semibold mb-4">Experience</h3>
+      <div class="bg-light-navy p-6 rounded-lg shadow-md">
+        <h4 class="font-semibold text-lightest-slate">Software Engineer</h4>
+        <p class="text-slate"><a href="http://https://www.fibre2fashion.com/">Fibre2Fashion</a> • January 2024 - Present
+        </p>
+        <ul class="list-disc ml-4 mt-2 text-slate">
+          <li>Designed and implemented a robust backend webhook for in-app purchases for Android, reducing transaction
+            disputes by 20%.</li>
+          <li>Developed RESTful APIs optimized for large datasets, enhancing data accessibility and system
+            responsiveness.</li>
+        </ul>
+      </div>
+
+      <div class="bg-light-navy p-6 rounded-lg shadow-md">
+        <h4 class="font-semibold text-lightest-slate">Software Engineer</h4>
+        <p class="text-slate"><a href="http://https://www.marutitech.com/">Maruti Tech labs</a> • December 2021 -
+          December 2023
+        </p>
+        <ul class="list-disc ml-4 mt-2 text-slate">
+          <li>Crafted a comprehensive project solution by harnessing Angular, .NET Core, and SQL Server, resulting in a
+            40% increase in project efficiency.</li>
+          <li>Significantly contributed to the project’s success by single-handedly managing the entire project life
+            cycle, including development, deployment, database management, and client communication</li>
+          <li>
+            Established a streamlined workflow for Continuous Integration and Continuous Deployment (CI/CD),
+            ensuring efficient and error-free updates to the platform
+          </li>
+          <li>
+            Implemented a modular architecture, effectively separating the tightly coupled front and back-end
+            components, enhancing maintainability and flexibility
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="mt-12" data-aos="fade-up" data-aos-duration="1000">
+    <h3 class="text-2xl font-semibold mb-4">Skills</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      @for (skill of skills; track skill) {
+      <div class="bg-light-navy p-4 rounded-lg shadow-md text-center">
+        <span class="font-semibold text-lightest-slate">{{skill}}</span>
+      </div>
+      }
+    </div>
+  </div>
+</section>

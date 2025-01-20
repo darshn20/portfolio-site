@@ -1,0 +1,19 @@
+header {
+  transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+}
+
+header.hidden {
+  transform: translateY(-100%);
+}
+
+
+
+@media (max-width: 768px) {
+  .footer {
+      display: block;
+      width: 100%;
+      max-width: 270px;
+      margin: 0px auto 10px;
+      color: black;
+  }
+}

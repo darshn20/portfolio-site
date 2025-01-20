@@ -1,0 +1,56 @@
+<header [ngClass]="{'hidden': isHeaderHidden}">
+  <nav class="fixed w-full z-50 bg-black backdrop-blur-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20">
+        <div class="flex items-center">
+          <a href="#" class="text-xl font-bold text-green-400 hover:text-green-300 transition-colors">
+            <img src="/assets/logo.png" alt="logo" class="h-8 w-8" />
+          </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#" class="nav-link" data-aos="fade-down" data-aos-delay="100"><span
+              class="text-green-400 mr-1">01.</span>Home</a>
+          <a href="#experience" class="nav-link" data-aos="fade-down" data-aos-delay="200"><span
+              class="text-green-400 mr-1">02.</span>Experience</a>
+          <a href="#projects" class="nav-link" data-aos="fade-down" data-aos-delay="300"><span
+              class="text-green-400 mr-1">03.</span>Projects</a>
+          <a href="#contact" class="nav-link" data-aos="fade-down" data-aos-delay="500"><span
+              class="text-green-400 mr-1">04.</span>Contact</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden flex items-center p-2 rounded-lg hover:bg-light-navy transition-colors"
+          (click)="toggleMenu()" [attr.aria-label]="isMenuOpen ? 'Close menu' : 'Open menu'">
+          <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path *ngIf="!isMenuOpen" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+            <path *ngIf="isMenuOpen" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Sidebar -->
+    <div class="md:hidden" [ngClass]="{'block': isMenuOpen, 'hidden': !isMenuOpen}">
+      <div class="fixed inset-0 bg-black backdrop-blur-sm z-40 transition-opacity duration-300"
+        [ngClass]="{'opacity-100': isMenuOpen, 'opacity-0': !isMenuOpen}" (click)="toggleMenu()"></div>
+      <div
+        class="fixed right-0 top-0  w-[min(75vw,320px)] h-full bg-light-navy z-50 transform transition-all duration-300 ease-in-out"
+        [ngClass]="{'translate-x-0 opacity-100': isMenuOpen, 'translate-x-full opacity-0': !isMenuOpen}">
+        <div class="flex flex-col p-8 space-y-6 bg-black">
+          <a href="#" class="nav-link" (click)="toggleMenu()"><span class="text-green-400 mr-1">01.</span>Home</a>
+          <a href="#experience" class="nav-link" (click)="toggleMenu()"><span
+              class="text-green-400 mr-1">02.</span>Experience</a>
+          <a href="#projects" class="nav-link" (click)="toggleMenu()"><span
+              class="text-green-400 mr-1">03.</span>Projects</a>
+          <a href="#contact" class="nav-link" (click)="toggleMenu()"><span
+              class="text-green-400 mr-1">04.</span>Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
