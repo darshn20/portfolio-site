@@ -8,21 +8,21 @@
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="max-w-lg mx-auto space-y-6" data-aos="fade-up"
     data-aos-delay="300">
     <div>
-      <input formControlName="name" type="text" placeholder="Name"
+      <input formControlName="name" type="text" placeholder="Name" id="name" name="name" autocomplete="name"
         class="w-full px-4 py-3 bg-light-navy border border-lightest-navy rounded focus:border-green-400 focus:outline-none text-slate">
       <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="text-red-500">
         Name is required.
       </div>
     </div>
     <div>
-      <input formControlName="email" type="email" placeholder="Email"
+      <input formControlName="email" type="email" placeholder="Email" id="email" name="email" autocomplete="email"
         class="w-full px-4 py-3 bg-light-navy border border-lightest-navy rounded focus:border-green-400 focus:outline-none text-slate">
       <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-red-500">
         Valid email is required.
       </div>
     </div>
     <div>
-      <textarea formControlName="message" rows="4" placeholder="Message"
+      <textarea formControlName="message" rows="4" placeholder="Message" id="message" name="message"
         class="w-full px-4 py-3 bg-light-navy border border-lightest-navy rounded focus:border-green-400 focus:outline-none text-slate"></textarea>
       <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="text-red-500">
         Message is required.
