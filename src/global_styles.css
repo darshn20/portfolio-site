@@ -24,7 +24,6 @@ html {
 
 body {
   @apply antialiased;
-  counter-reset: section;
 }
 
 @layer utilities {
@@ -54,8 +53,6 @@ body {
   }
 
   .section-title::before {
-    counter-increment: section 1;
-    content: "0" counter(section) ".";
     @apply text-green-400 mr-2 text-xl;
   }
 
