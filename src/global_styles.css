@@ -23,6 +23,11 @@ body {
   @apply antialiased;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 @layer utilities {
   .text-slate {
     color: var(--slate);

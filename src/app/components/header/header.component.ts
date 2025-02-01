@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule],
   templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit {
@@ -40,5 +40,6 @@ export class HeaderComponent implements OnInit {
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
     document.body.style.overflow = this.isMenuOpen ? 'hidden' : '';
+    document.body.classList.toggle('no-scroll', this.isMenuOpen);
   }
 }
