@@ -21,15 +21,6 @@
           "value": "application/xml"
         }
       ]
-    },
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Content-Encoding",
-          "value": "gzip"
-        }
-      ]
     }
   ]
 }
