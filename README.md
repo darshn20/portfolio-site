@@ -1,9 +1,6 @@
----
-
 # Portfolio Website
 
 A modern, responsive portfolio website built with **Angular** and **Server-Side Rendering (SSR)**, inspired by [Brittany Chiang's portfolio](https://v4.brittanychiang.com/). This project is designed to showcase your skills, projects, and contact information in a visually appealing and accessible way.
-
 
 ### Steps
 1. Clone the repository:
@@ -19,7 +16,6 @@ A modern, responsive portfolio website built with **Angular** and **Server-Side 
    npm install
    ```
 
----
 
 ## 🖥️ Running the Application
 
@@ -32,7 +28,7 @@ ng serve
 ### Build for Production
 Build the project for production:
 ```bash
-ng build
+ng build:prod
 ```
 
 ### Server-Side Rendering
@@ -42,13 +38,9 @@ npm run build:ssr
 npm run serve:ssr
 ```
 
----
-
 ## 🌐 Demo
 
 Check out the site: [https://darshanbhuva.vercel.app](https://darshanbhuva.vercel.app/)
-
----
 
 ## 📧 Contact
 
@@ -56,5 +48,3 @@ For questions or feedback, feel free to reach out:
 - **Email**: [darshanbhuva57@gmail.com](mailto:darshanbhuva57@gmail.com)
 - **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/darshan-bhuva-805170190)
 - **GitHub**: [Your GitHub Profile](https://github.com/darshn20)
-
----
