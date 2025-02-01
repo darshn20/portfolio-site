@@ -1,0 +1,53 @@
+<section id="experience" class="section-container">
+    <div class="mt-12" data-aos="fade-up" data-aos-duration="1000">
+        <h3 class="text-2xl font-semibold mb-4">Skills</h3>
+
+        <h4 class="text-xl font-semibold mb-2">Front-end</h4>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            @for (frontend of frontends; track frontend) {
+            <div class="p-4 rounded-lg shadow-md text-center flex flex-col items-center">
+                <img [src]="frontend.logo" [alt]="frontend.name"
+                    class="h-10 w-10 mb-2 transition-transform duration-300 transform hover:scale-110"
+                    [class.invert]="frontend?.isInvertLogo">
+                <span class="font-semibold text-lightest-slate">{{ frontend.name }}</span>
+            </div>
+            }
+        </div>
+
+        <h4 class="text-xl font-semibold mb-2 mt-8">Back-end</h4>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            @for (backend of backends; track backend) {
+            <div class="p-4 rounded-lg shadow-md text-center flex flex-col items-center">
+                <img [src]="backend.logo" [alt]="backend.name"
+                    class="h-10 w-10 mb-2 transition-transform duration-300 transform hover:scale-110"
+                    [class.invert]="backend?.isInvertLogo">
+                <span class="font-semibold text-lightest-slate">{{ backend.name }}</span>
+            </div>
+            }
+        </div>
+
+        <h4 class="text-xl font-semibold mb-2 mt-8">Database</h4>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            @for (database of databases; track database) {
+            <div class="p-4 rounded-lg shadow-md text-center flex flex-col items-center">
+                <img [src]="database.logo" [alt]="database.name"
+                    class="h-10 w-10 mb-2 transition-transform duration-300 transform hover:scale-110"
+                    [class.invert]="database?.isInvertLogo">
+                <span class="font-semibold text-lightest-slate">{{ database.name }}</span>
+            </div>
+            }
+        </div>
+
+        <h4 class="text-xl font-semibold mb-2 mt-8">Ops</h4>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            @for (ops of opss; track ops) {
+            <div class="p-4 rounded-lg shadow-md text-center flex flex-col items-center">
+                <img [src]="ops.logo" [alt]="ops.name"
+                    class="h-10 w-10 mb-2  transition-transform duration-300 transform hover:scale-110"
+                    [class.invert]="ops?.isInvertLogo">
+                <span class="font-semibold text-lightest-slate">{{ ops.name }}</span>
+            </div>
+            }
+        </div>
+    </div>
+</section>

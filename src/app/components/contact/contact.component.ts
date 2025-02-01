@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { EmailService } from '../../service/email.service';
 
 @Component({
   selector: 'app-contact',
@@ -9,9 +10,11 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, ReactiveFormsModule]
 })
 export class ContactComponent implements OnInit {
-  contactForm!: FormGroup ;
-
-  constructor(private fb: FormBuilder) { }
+  contactForm!: FormGroup;
+  isMailSending: boolean = false;
+  uploadMessage: string = '';
+  isError: boolean = false;
+  constructor(private fb: FormBuilder, private emailService: EmailService) { }
 
   ngOnInit(): void {
     this.contactForm = this.fb.group({
@@ -23,23 +26,24 @@ export class ContactComponent implements OnInit {
 
   onSubmit(): void {
     if (this.contactForm && this.contactForm.valid) {
-      const formData = this.contactForm.value;
-      console.log('Email sent successfully', formData);
-
-      // this.sendEmail(formData).subscribe(response => {
-      //   console.log('Email sent successfully', response);
-      // }, error => {
-      //   console.error('Error sending email', error);
-      // });
+      this.isMailSending = true;
+      this.emailService.sebdEmail(this.contactForm.value).subscribe({
+        next: (data) => {
+          this.uploadMessage = data.message;
+        },
+        error: (error) => {
+          this.isError = true;
+          this.isMailSending = false;
+          this.uploadMessage = error.message ?? 'Something went wrong, please try again later';
+        },
+        complete: () => {
+          this.isMailSending = false;
+          this.contactForm.reset();
+          setTimeout(() => {
+            this.uploadMessage = '';
+          }, 5000);
+        }
+      });
     }
   }
-
-  // sendEmail(formData: any) {
-  //   const emailData = {
-  //     to: 'your-email@gmail.com',
-  //     subject: 'Contact Form Submission',
-  //     text: `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`
-  //   };
-  //   return this.http.post('https://your-email-api-endpoint', emailData);
-  // }
 }

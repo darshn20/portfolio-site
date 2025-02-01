@@ -4,9 +4,6 @@
 @tailwind utilities;
 
 :root {
-  --navy: #0a192f;
-  --light-navy: #112240;
-  --lightest-navy: #233554;
   --slate: #8892b0;
   --light-slate: #a8b2d1;
   --lightest-slate: #ccd6f6;
@@ -18,7 +15,7 @@ html {
   scrollbar-width: thin;
   scrollbar-color: grey black;
   scroll-behavior: smooth;
-  background-color: var(--navy);
+  background-color: black;
   color: var(--slate);
 }
 
@@ -45,7 +42,7 @@ body {
   }
 
   .section-container {
-    @apply max-w-6xl mx-auto px-4 py-16 sm:px-6 lg:px-8;
+    @apply max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8;
   }
 
   .section-title {
