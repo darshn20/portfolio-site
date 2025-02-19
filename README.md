@@ -1,6 +1,6 @@
 # Portfolio Website
 
-A modern, responsive portfolio website built with **Angular** and **Server-Side Rendering (SSR)**, inspired by [Brittany Chiang's portfolio](https://v4.brittanychiang.com/). This project is designed to showcase your skills, projects, and contact information in a visually appealing and accessible way.
+A modern, responsive portfolio website built with **Angular** and **Server-Side Rendering (SSR)**. This project is designed to showcase your skills, projects, and contact information in a visually appealing and accessible way.
 
 ### Steps
 1. Clone the repository:
