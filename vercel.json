@@ -11,16 +11,5 @@
     "api/index.js": {
       "includeFiles": "dist/portfolio/browser/**"
     }
-  },
-  "headers": [
-    {
-      "source": "/sitemap.xml",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/xml"
-        }
-      ]
-    }
-  ]
+  }
 }
