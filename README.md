@@ -46,5 +46,5 @@ Check out the site: [https://darshanbhuva.vercel.app](https://darshanbhuva.verce
 
 For questions or feedback, feel free to reach out:
 - **Email**: [darshanbhuva57@gmail.com](mailto:darshanbhuva57@gmail.com)
-- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/darshan-bhuva-805170190)
-- **GitHub**: [Your GitHub Profile](https://github.com/darshn20)
+- **LinkedIn**: [darshan-bhuva](https://www.linkedin.com/in/darshan-bhuva-805170190)
+- **GitHub**: [darshn20](https://github.com/darshn20)
