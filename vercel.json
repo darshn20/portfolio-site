@@ -1,6 +1,7 @@
 {
   "version": 2,
   "public": true,
+  "buildCommand": "npm run build:prod",
   "rewrites": [
     {
       "source": "/assets/(.*)",
