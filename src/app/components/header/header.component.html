@@ -3,7 +3,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-20">
         <div class="flex items-center">
-          <a href="#" class="text-xl font-bold text-green-400 hover:text-green-300 transition-colors"
+          <a routerLink="/" class="text-xl font-bold text-green-400 hover:text-green-300 transition-colors"
             aria-label="Darshan Bhuva - Home">
             <img src="/assets/logo.png" alt="Darshan Bhuva Logo" class="h-8 w-8" />
           </a>
@@ -11,17 +11,17 @@
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center space-x-8" role="menubar">
-          <a href="#" class="nav-link" data-aos="fade-down" data-aos-delay="100" role="menuitem"><span
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link" data-aos="fade-down" data-aos-delay="100" role="menuitem"><span
               class="text-green-400 mr-1" aria-hidden="true"></span>Home</a>
-          <a href="#about-me" class="nav-link" data-aos="fade-down" data-aos-delay="150" role="menuitem"><span
+          <a routerLink="/about" routerLinkActive="active" class="nav-link" data-aos="fade-down" data-aos-delay="150" role="menuitem"><span
               class="text-green-400 mr-1" aria-hidden="true"></span>About</a>
-          <a href="#experience" class="nav-link" data-aos="fade-down" data-aos-delay="200" role="menuitem"><span
+          <a routerLink="/experience" routerLinkActive="active" class="nav-link" data-aos="fade-down" data-aos-delay="200" role="menuitem"><span
               class="text-green-400 mr-1" aria-hidden="true"></span>Experience</a>
-          <a href="#projects" class="nav-link" data-aos="fade-down" data-aos-delay="300" role="menuitem"><span
+          <a routerLink="/projects" routerLinkActive="active" class="nav-link" data-aos="fade-down" data-aos-delay="300" role="menuitem"><span
               class="text-green-400 mr-1" aria-hidden="true"></span>Projects</a>
-          <a href="#contact" class="nav-link" data-aos="fade-down" data-aos-delay="400" role="menuitem"><span
+          <a routerLink="/contact" routerLinkActive="active" class="nav-link" data-aos="fade-down" data-aos-delay="400" role="menuitem"><span
               class="text-green-400 mr-1" aria-hidden="true"></span>Contact</a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
+          <a routerLink="/resume" routerLinkActive="active"
             class="px-4 py-2 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-300 transition-all duration-200 shadow-lg hover:shadow-green-400/25"
             data-aos="fade-down" data-aos-delay="500" role="menuitem">Resume</a>
         </div>
@@ -60,33 +60,33 @@
 
       <!-- Mobile Menu Links -->
       <nav class="flex flex-col px-4 py-6 space-y-2" role="menu" aria-label="Mobile navigation menu">
-        <a href="#"
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
           class="block py-2.5 px-3 text-white hover:text-green-400 hover:bg-gray-800 rounded-md transition-all duration-200"
           (click)="toggleMenu()" role="menuitem">
           Home
         </a>
-        <a href="#about-me"
+        <a routerLink="/about" routerLinkActive="active"
           class="block py-2.5 px-3 text-white hover:text-green-400 hover:bg-gray-800 rounded-md transition-all duration-200"
           (click)="toggleMenu()" role="menuitem">
           About
         </a>
-        <a href="#experience"
+        <a routerLink="/experience" routerLinkActive="active"
           class="block py-2.5 px-3 text-white hover:text-green-400 hover:bg-gray-800 rounded-md transition-all duration-200"
           (click)="toggleMenu()" role="menuitem">
           Experience
         </a>
-        <a href="#projects"
+        <a routerLink="/projects" routerLinkActive="active"
           class="block py-2.5 px-3 text-white hover:text-green-400 hover:bg-gray-800 rounded-md transition-all duration-200"
           (click)="toggleMenu()" role="menuitem">
           Projects
         </a>
-        <a href="#contact"
+        <a routerLink="/contact" routerLinkActive="active"
           class="block py-2.5 px-3 text-white hover:text-green-400 hover:bg-gray-800 rounded-md transition-all duration-200"
           (click)="toggleMenu()" role="menuitem">
           Contact
         </a>
         <div class="pt-4">
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
+          <a routerLink="/resume" routerLinkActive="active"
             class="block py-3 px-4 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-300 transition-all duration-200 shadow-lg text-center"
             (click)="toggleMenu()" role="menuitem">
             Resume

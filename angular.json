@@ -68,7 +68,10 @@
             "prerender": true,
             "ssr": {
               "entry": "server.ts"
-            }
+            },
+            "allowedCommonJsDependencies": [
+              "aos"
+            ]
           }
         },
         "serve": {

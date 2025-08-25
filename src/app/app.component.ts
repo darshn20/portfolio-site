@@ -8,6 +8,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { GoogleAnalyticsService } from './service/google-analytics.service';
 import { SeoService } from './service/seo.service';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -32,6 +33,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.googleAnalyticsService.loadGoogleAnalytics();
 
+
+
     // Set default SEO meta tags
     this.seoService.updateMetaTags({
       title: 'Darshan Bhuva | Full-Stack Developer | Angular & .NET Expert | Portfolio',
@@ -40,5 +43,8 @@ export class AppComponent implements OnInit {
       image: 'https://darshanbhuva.vercel.app/assets/logo.jpg',
       keywords: 'Darshan Bhuva, Full-Stack Developer, Angular Developer, .NET Developer, TypeScript Expert, Web Development, JavaScript, Node.js, Software Engineer, Frontend Developer, Backend Developer, Portfolio'
     });
+
+    // Ensure canonical URL is set for current page
+    this.seoService.setCanonicalForCurrentPage();
   }
 }

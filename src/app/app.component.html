@@ -1,7 +1,11 @@
-<app-header></app-header>
+<div class="min-h-screen flex flex-col">
+  <app-header></app-header>
 
-<app-sidebar></app-sidebar>
+  <app-sidebar></app-sidebar>
 
-<app-home></app-home>
+  <div class="flex-1">
+    <router-outlet></router-outlet>
+  </div>
 
-<app-footer></app-footer>
+  <app-footer></app-footer>
+</div>
