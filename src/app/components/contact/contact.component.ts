@@ -25,6 +25,9 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(): void {
+    // Mark all fields as touched to show validation messages
+    this.contactForm.markAllAsTouched();
+    this.uploadMessage = '';
     if (this.contactForm && this.contactForm.valid) {
       this.isMailSending = true;
       this.emailService.sebdEmail(this.contactForm.value).subscribe({

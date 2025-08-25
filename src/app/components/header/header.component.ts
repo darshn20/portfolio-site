@@ -1,6 +1,5 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -39,7 +38,15 @@ export class HeaderComponent implements OnInit {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
-    document.body.style.overflow = this.isMenuOpen ? 'hidden' : '';
-    document.body.classList.toggle('no-scroll', this.isMenuOpen);
+
+    if (isPlatformBrowser(this.platformId)) {
+      if (this.isMenuOpen) {
+        document.body.style.overflow = 'hidden';
+        document.body.classList.add('no-scroll');
+      } else {
+        document.body.style.overflow = '';
+        document.body.classList.remove('no-scroll');
+      }
+    }
   }
 }

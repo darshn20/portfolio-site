@@ -1,0 +1,30 @@
+{
+    "name": "Darshan Bhuva Portfolio",
+    "short_name": "DB Portfolio",
+    "description": "Full-Stack Developer Portfolio of Darshan Bhuva, specializing in Angular and .NET development",
+    "start_url": "/",
+    "id": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "icons": [
+        {
+            "src": "/assets/logo-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/assets/logo.jpg",
+            "sizes": "192x192",
+            "type": "image/jpeg",
+            "purpose": "any"
+        }
+    ],
+    "scope": "/",
+    "orientation": "any",
+    "categories": [
+        "productivity",
+        "personalization"
+    ]
+}

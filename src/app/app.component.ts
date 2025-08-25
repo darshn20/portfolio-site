@@ -6,6 +6,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { GoogleAnalyticsService } from './service/google-analytics.service';
+import { SeoService } from './service/seo.service';
 
 @Component({
   selector: 'app-root',
@@ -23,9 +24,21 @@ import { GoogleAnalyticsService } from './service/google-analytics.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private googleAnalyticsService: GoogleAnalyticsService) { }
+  constructor(
+    private googleAnalyticsService: GoogleAnalyticsService,
+    private seoService: SeoService
+  ) { }
 
   ngOnInit() {
     this.googleAnalyticsService.loadGoogleAnalytics();
+
+    // Set default SEO meta tags
+    this.seoService.updateMetaTags({
+      title: 'Darshan Bhuva | Full-Stack Developer | Angular & .NET Expert | Portfolio',
+      description: 'Experienced Full-Stack Developer specializing in Angular, .NET, TypeScript, and modern web technologies. View my portfolio showcasing scalable web applications, API development, and innovative solutions.',
+      url: 'https://darshanbhuva.vercel.app/',
+      image: 'https://darshanbhuva.vercel.app/assets/logo.jpg',
+      keywords: 'Darshan Bhuva, Full-Stack Developer, Angular Developer, .NET Developer, TypeScript Expert, Web Development, JavaScript, Node.js, Software Engineer, Frontend Developer, Backend Developer, Portfolio'
+    });
   }
 }

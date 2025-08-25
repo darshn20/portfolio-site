@@ -1,23 +1,29 @@
-<header [ngClass]="{'hidden': isHeaderHidden}">
-  <nav class="fixed w-full z-50 bg-black backdrop-blur-sm overflow-hidden">
+<header [ngClass]="{'hidden': isHeaderHidden}" role="banner">
+  <nav class="fixed w-full z-50 bg-black backdrop-blur-sm" role="navigation" aria-label="Main navigation">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-20">
         <div class="flex items-center">
-          <a href="#" class="text-xl font-bold text-green-400 hover:text-green-300 transition-colors">
-            <img src="/assets/logo.png" alt="logo" class="h-8 w-8" />
+          <a href="#" class="text-xl font-bold text-green-400 hover:text-green-300 transition-colors"
+            aria-label="Darshan Bhuva - Home">
+            <img src="/assets/logo.png" alt="Darshan Bhuva Logo" class="h-8 w-8" />
           </a>
         </div>
 
         <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="#" class="nav-link" data-aos="fade-down" data-aos-delay="100"><span
-              class="text-green-400 mr-1"></span>Home</a>
-          <a href="#experience" class="nav-link" data-aos="fade-down" data-aos-delay="200"><span
-              class="text-green-400 mr-1"></span>Experience</a>
-          <a href="#projects" class="nav-link" data-aos="fade-down" data-aos-delay="300"><span
-              class="text-green-400 mr-1"></span>Projects</a>
-          <a href="#contact" class="nav-link" data-aos="fade-down" data-aos-delay="500"><span
-              class="text-green-400 mr-1"></span>Contact</a>
+        <div class="hidden md:flex items-center space-x-8" role="menubar">
+          <a href="#" class="nav-link" data-aos="fade-down" data-aos-delay="100" role="menuitem"><span
+              class="text-green-400 mr-1" aria-hidden="true"></span>Home</a>
+          <a href="#about-me" class="nav-link" data-aos="fade-down" data-aos-delay="150" role="menuitem"><span
+              class="text-green-400 mr-1" aria-hidden="true"></span>About</a>
+          <a href="#experience" class="nav-link" data-aos="fade-down" data-aos-delay="200" role="menuitem"><span
+              class="text-green-400 mr-1" aria-hidden="true"></span>Experience</a>
+          <a href="#projects" class="nav-link" data-aos="fade-down" data-aos-delay="300" role="menuitem"><span
+              class="text-green-400 mr-1" aria-hidden="true"></span>Projects</a>
+          <a href="#contact" class="nav-link" data-aos="fade-down" data-aos-delay="400" role="menuitem"><span
+              class="text-green-400 mr-1" aria-hidden="true"></span>Contact</a>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
+            class="px-4 py-2 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-300 transition-all duration-200 shadow-lg hover:shadow-green-400/25"
+            data-aos="fade-down" data-aos-delay="500" role="menuitem">Resume</a>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -30,43 +36,63 @@
               d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-
       </div>
     </div>
-
-    <!-- Mobile Sidebar -->
-    <div class="md:hidden">
-      <div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
-        [ngClass]="{'opacity-100 visible': isMenuOpen, 'opacity-0 invisible': !isMenuOpen}" (click)="toggleMenu()">
-      </div>
-
-      <div
-        class="fixed right-0 top-0 w-[min(75vw,320px)] h-full z-50 bg-black/95 shadow-xl transform transition-all duration-300"
-        [ngClass]="{'translate-x-0': isMenuOpen, 'translate-x-full': !isMenuOpen}">
-
-        <!-- Close Button -->
-        <div class="flex justify-between items-center px-6 py-4 border-b border-gray-800">
-          <span class="text-lg font-semibold text-white">Menu</span>
-          <button (click)="toggleMenu()" aria-label="Close menu"
-            class="p-2 text-green-400 hover:text-green-300 rounded-lg transition-colors">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-
-        <!-- Mobile Menu Links -->
-        <div class="flex flex-col p-8 space-y-6 bg-black">
-          <a href="#" class="nav-link" (click)="toggleMenu()"><span class="text-green-400 mr-1"></span>Home</a>
-          <a href="#experience" class="nav-link" (click)="toggleMenu()"><span
-              class="text-green-400 mr-1"></span>Experience</a>
-          <a href="#projects" class="nav-link" (click)="toggleMenu()"><span
-              class="text-green-400 mr-1"></span>Projects</a>
-          <a href="#contact" class="nav-link" (click)="toggleMenu()"><span
-              class="text-green-400 mr-1"></span>Contact</a>
-        </div>
-      </div>
-    </div>
-
   </nav>
+
+  <!-- Mobile Sidebar - Moved outside nav -->
+  <div class="md:hidden" *ngIf="isMenuOpen">
+    <!-- Backdrop -->
+    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm z-40" (click)="toggleMenu()"></div>
+
+    <!-- Sidebar -->
+    <div class="fixed right-0 top-0 w-[min(75vw,320px)] h-full z-50 bg-gray-900 border-l border-gray-700 shadow-2xl">
+      <!-- Close Button -->
+      <div class="flex justify-between items-center px-6 py-4 border-b border-gray-700">
+        <span class="text-lg font-semibold text-white">Menu</span>
+        <button (click)="toggleMenu()" aria-label="Close menu"
+          class="p-2 text-green-400 hover:text-green-300 rounded-lg transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Links -->
+      <nav class="flex flex-col px-4 py-6 space-y-2" role="menu" aria-label="Mobile navigation menu">
+        <a href="#"
+          class="block py-2.5 px-3 text-white hover:text-green-400 hover:bg-gray-800 rounded-md transition-all duration-200"
+          (click)="toggleMenu()" role="menuitem">
+          Home
+        </a>
+        <a href="#about-me"
+          class="block py-2.5 px-3 text-white hover:text-green-400 hover:bg-gray-800 rounded-md transition-all duration-200"
+          (click)="toggleMenu()" role="menuitem">
+          About
+        </a>
+        <a href="#experience"
+          class="block py-2.5 px-3 text-white hover:text-green-400 hover:bg-gray-800 rounded-md transition-all duration-200"
+          (click)="toggleMenu()" role="menuitem">
+          Experience
+        </a>
+        <a href="#projects"
+          class="block py-2.5 px-3 text-white hover:text-green-400 hover:bg-gray-800 rounded-md transition-all duration-200"
+          (click)="toggleMenu()" role="menuitem">
+          Projects
+        </a>
+        <a href="#contact"
+          class="block py-2.5 px-3 text-white hover:text-green-400 hover:bg-gray-800 rounded-md transition-all duration-200"
+          (click)="toggleMenu()" role="menuitem">
+          Contact
+        </a>
+        <div class="pt-4">
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
+            class="block py-3 px-4 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-300 transition-all duration-200 shadow-lg text-center"
+            (click)="toggleMenu()" role="menuitem">
+            Resume
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
 </header>

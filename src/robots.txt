@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /dist/
 
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://darshanbhuva.vercel.app/sitemap.xml
+
+# Additional sitemaps
 Sitemap: https://darshanbhuva.vercel.app/sitemap.xml

@@ -3,13 +3,17 @@
   "public": true,
   "rewrites": [
     {
+      "source": "/assets/(.*)",
+      "destination": "/assets/$1"
+    },
+    {
       "source": "/(.*)",
       "destination": "/api"
     }
   ],
   "functions": {
     "api/index.js": {
-      "includeFiles": "dist/portfolio/browser/**"
+      "includeFiles": "dist/portfolio/**"
     }
   }
 }

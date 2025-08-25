@@ -3,10 +3,11 @@
   "private": true,
   "scripts": {
     "start": "ng serve",
+    "dev": "npm run start",
     "build-dev": "ng build",
     "build:prod": "ng build --configuration=production",
     "serve:ssr": "node dist/portfolio/server/server.mjs",
-    "vercel-build": "npm run build:prod"
+    "vercel-build": "npm run build:prod && echo 'Build completed successfully'"
   },
   "dependencies": {
     "@angular/animations": "^18.2.13",
