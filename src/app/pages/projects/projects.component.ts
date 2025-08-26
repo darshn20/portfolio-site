@@ -17,7 +17,7 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.updateMetaTags({
-      title: 'Projects – Darshan Bhuva Portfolio',
+      title: 'Projects – Darshan Bhuva',
       description: 'Explore Darshan Bhuva\'s portfolio of innovative web applications and software projects. View detailed case studies of Angular, .NET, and full-stack development work.',
       url: 'https://darshanbhuva.vercel.app/projects',
       keywords: 'Darshan Bhuva Projects, Full-Stack Developer Portfolio, Angular Projects, .NET Applications, Web Development Portfolio, Software Development Projects'

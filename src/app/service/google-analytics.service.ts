@@ -2,6 +2,8 @@ import { Injectable, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { environment } from '../../environments/environment';
 
+declare let gtag: Function;
+
 @Injectable({
   providedIn: 'root',
 })
@@ -46,6 +48,19 @@ export class GoogleAnalyticsService {
       head.insertBefore(inlineScript, gaScript.nextSibling);
     } else {
       head.appendChild(inlineScript);
+    }
+  }
+
+  trackResumeDownload(): void {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'file_download', {
+        file_name: 'resume.pdf',
+        file_extension: 'pdf',
+        link_url: '/resume.pdf',
+        event_category: 'engagement',
+        event_label: 'Resume Download',
+        value: 1
+      });
     }
   }
 }

@@ -1,0 +1,52 @@
+<div class="min-h-screen flex flex-col items-center justify-start pt-8 sm:pt-12 md:pt-16 text-white">
+  <div class="max-w-4xl mx-auto text-center w-full">
+    <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 sm:mb-8 text-green-400">Resume</h1>
+
+    <div class="mb-8 sm:mb-10">
+      <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-6 px-2 sm:px-0 leading-relaxed">
+        Download my complete professional resume to learn more about my experience, skills, and achievements.
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-4 sm:gap-6 justify-center items-center mb-8 sm:mb-12">
+      <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" (click)="trackResumeDownload()"
+        class="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-300 transition-all duration-200 shadow-lg hover:shadow-green-400/25 flex items-center justify-center gap-2 text-sm sm:text-base">
+        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+          </path>
+        </svg>
+        Download Resume (PDF)
+      </a>
+
+      <a routerLink="/experience"
+        class="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-green-400 text-green-400 font-semibold rounded-lg hover:bg-green-400 hover:text-black transition-all duration-200 text-center text-sm sm:text-base">
+        View Experience Online
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 text-left">
+      <div
+        class="bg-gray-900 p-4 sm:p-6 rounded-lg border border-gray-700 hover:border-green-400/30 transition-colors">
+        <h3 class="text-lg sm:text-xl font-semibold text-green-400 mb-2 sm:mb-3">Technical Skills</h3>
+        <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Angular, .NET, TypeScript, JavaScript, Node.js,
+          and modern web technologies</p>
+      </div>
+
+      <div
+        class="bg-gray-900 p-4 sm:p-6 rounded-lg border border-gray-700 hover:border-green-400/30 transition-colors">
+        <h3 class="text-lg sm:text-xl font-semibent text-green-400 mb-2 sm:mb-3">Experience</h3>
+        <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Full-Stack development with focus on scalable
+          web
+          applications and API development</p>
+      </div>
+
+      <div
+        class="bg-gray-900 p-4 sm:p-6 rounded-lg border border-gray-700 hover:border-green-400/30 transition-colors sm:col-span-2 lg:col-span-1">
+        <h3 class="text-lg sm:text-xl font-semibold text-green-400 mb-2 sm:mb-3">Projects</h3>
+        <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Portfolio of innovative solutions and modern web
+          applications</p>
+      </div>
+    </div>
+  </div>
+</div>

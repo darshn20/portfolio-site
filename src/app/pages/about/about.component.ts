@@ -17,7 +17,7 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.updateMetaTags({
-      title: 'About Me – Darshan Bhuva Portfolio',
+      title: 'About Me – Darshan Bhuva',
       description: 'Learn about Darshan Bhuva, a passionate Full-Stack Developer with expertise in Angular, .NET, and modern web technologies. Discover my journey, skills, and professional background.',
       url: 'https://darshanbhuva.vercel.app/about',
       keywords: 'About Darshan Bhuva, Full-Stack Developer Background, Angular Developer Profile, .NET Developer Experience, Web Developer Skills'
